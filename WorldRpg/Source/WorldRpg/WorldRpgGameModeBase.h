@@ -14,4 +14,6 @@ class WORLDRPG_API AWorldRpgGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	AWorldRpgGameModeBase();
 };
