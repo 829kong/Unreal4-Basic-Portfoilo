@@ -33,9 +33,19 @@ public:
 	UPROPERTY(VisibleAnywhere, Category = "Mesh")
 	class USphereComponent* m_SphereComponent;
 
+	UPROPERTY(VisibleAnywhere,Category = "Camera")
+	class UCameraComponent* m_Camera;
+
+	UPROPERTY(VisibleAnywhere,Category = "Camera")
+	class USpringArmComponent* m_SpringArm;
+
 	FORCEINLINE UStaticMeshComponent* GetMeshComponent() { return m_MeshComponent; }
 	FORCEINLINE void SetMeshComponent(UStaticMeshComponent* MeshComponent) { m_MeshComponent = MeshComponent; }
 	FORCEINLINE USphereComponent* GetSphereComponent() { return m_SphereComponent; }
 	FORCEINLINE void SetSphereComponent(USphereComponent* SphereComponent) { m_SphereComponent = SphereComponent; }
 
+
+private:
+	void MoveForward(float Value);
+	void MoveRight(float Value);
 };
