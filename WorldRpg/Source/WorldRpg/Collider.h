@@ -39,13 +39,24 @@ public:
 	UPROPERTY(VisibleAnywhere,Category = "Camera")
 	class USpringArmComponent* m_SpringArm;
 
+	UPROPERTY(VisibleAnywhere,Category = "Movement")
+	class UColliderMovementComponent* m_ColliderMovementComp;
+
 	FORCEINLINE UStaticMeshComponent* GetMeshComponent() { return m_MeshComponent; }
 	FORCEINLINE void SetMeshComponent(UStaticMeshComponent* MeshComponent) { m_MeshComponent = MeshComponent; }
 	FORCEINLINE USphereComponent* GetSphereComponent() { return m_SphereComponent; }
 	FORCEINLINE void SetSphereComponent(USphereComponent* SphereComponent) { m_SphereComponent = SphereComponent; }
 
+	virtual UPawnMovementComponent* GetMovementComponent() const override;
+
+	UPROPERTY(EditAnywhere,Category = "Speed")
+	float m_MaxSpeed;
 
 private:
 	void MoveForward(float Value);
 	void MoveRight(float Value);
+	void MovePitch(float Value);
+	void MoveYaw(float Value);
+
+	FVector2D CameraInput;
 };

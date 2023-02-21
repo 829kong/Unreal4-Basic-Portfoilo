@@ -72,14 +72,9 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
-Content/ParagonGreystone
-Content/ParagonMinions
-Content/Asian_Village
-Content/ProceduralBiomes
 JSON
 Content/Graphics
-WorldRpg/Content/StarterContent
 WorldRpg/Saved
 WorldRpg/Intermediate
 WorldRpg/Binaries
-WorldRpg/Content/Asset
+WorldRpg/Content/Asset/EnvironmentPack2

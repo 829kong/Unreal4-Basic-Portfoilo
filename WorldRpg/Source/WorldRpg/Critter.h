@@ -15,10 +15,10 @@ public:
 	// Sets default values for this pawn's properties
 	ACritter();
 
-	UPROPERTY()
-	class UStaticMeshComponent* m_MeshComp;
+	UPROPERTY(VisibleAnywhere)
+	class USkeletalMeshComponent* m_SkeltalMesh;
 
-	UPROPERTY()
+	UPROPERTY(VisibleAnywhere)
 	class UCameraComponent* m_Camera;
 
 protected:

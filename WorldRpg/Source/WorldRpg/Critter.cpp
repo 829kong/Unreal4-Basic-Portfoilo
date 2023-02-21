@@ -12,26 +12,19 @@ ACritter::ACritter()
 
 	struct FConstructorStatics
 	{
-		ConstructorHelpers::FObjectFinder<UStaticMesh> BasicMesh;
-
 		FConstructorStatics()
-			:BasicMesh(TEXT("StaticMesh'/Game/Asset/StarterContent/Shapes/Shape_Cone.Shape_Cone'"))
 		{}
 	};
 
 	RootComponent = CreateDefaultSubobject<USceneComponent>(TEXT("RootComponent"));
-	m_MeshComp = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("StaticComponent"));
+	m_SkeltalMesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("SkeletalComponent"));
 	m_Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
-	m_MeshComp->SetupAttachment(GetRootComponent());
+	m_SkeltalMesh->SetupAttachment(GetRootComponent());
 	m_Camera->SetupAttachment(GetRootComponent());
 	m_Camera->SetRelativeLocation(FVector(-300.f, 0.f, 300.f));
 	m_Camera->SetRelativeRotation(FRotator(-45.f, 0.f, 0.f));
 
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
-
 	static FConstructorStatics ConstructorStatics;
-	if (ConstructorStatics.BasicMesh.Succeeded())
-		m_MeshComp->SetStaticMesh(ConstructorStatics.BasicMesh.Object);
 
 	m_CurrentVelocity = FVector(0.f);
 	m_MaxSpeed = 100.f;
