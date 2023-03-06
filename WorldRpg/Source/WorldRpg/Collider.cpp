@@ -43,8 +43,6 @@ ACollider::ACollider()
 	m_ColliderMovementComp = CreateDefaultSubobject<UColliderMovementComponent>(TEXT("ColliderMovement"));
 	m_ColliderMovementComp->UpdatedComponent = RootComponent;
 
-	AutoPossessPlayer = EAutoReceiveInput::Player0;
-
 	m_MaxSpeed = 100.f;
 	CameraInput = FVector2D(0.f, 0.f);
 

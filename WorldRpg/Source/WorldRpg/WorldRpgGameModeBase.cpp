@@ -2,13 +2,14 @@
 
 
 #include "WorldRpgGameModeBase.h"
-#include "Critter.h"
+#include "MainChar.h"
 
 AWorldRpgGameModeBase::AWorldRpgGameModeBase()
 {
-	DefaultPawnClass = ACritter::StaticClass();
-	static ConstructorHelpers::FClassFinder<ACritter> Critter(TEXT("Class'/Script/WorldRpg.Critter'"));
+	DefaultPawnClass = AMainChar::StaticClass();
+	static ConstructorHelpers::FClassFinder<AMainChar> MainChar(TEXT("Blueprint'/Game/BluePrint/BP_MainChar.BP_MainChar_C'"));
 
-	if (Critter.Succeeded())
-		DefaultPawnClass = Critter.Class;
+	if (MainChar.Succeeded())
+		DefaultPawnClass = MainChar.Class;
 }
+	
